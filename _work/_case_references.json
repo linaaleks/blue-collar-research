@@ -1,0 +1,345 @@
+{
+  "metadata": {
+    "created": "2026-03-02",
+    "total_unique_cases": 18,
+    "total_mentions": 42,
+    "agents": ["Claude", "OpenAI", "Gemini", "Perplexity"]
+  },
+  "cases": [
+    {
+      "id": "CASE_001",
+      "canonical_name": "Strivr",
+      "type": "VR_TRAIN",
+      "region": "US",
+      "segment": ["B2B"],
+      "focus": ["MULTI", "RETAIL"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C01", "confidence": "HIGH"},
+        {"agent": "Gemini", "case_id": "C01", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C01", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "funding": "$51M+",
+        "users": "2M+ VR sessions",
+        "clients": ["Walmart", "Verizon", "BMW"]
+      }
+    },
+    {
+      "id": "CASE_002",
+      "canonical_name": "Transfr",
+      "type": "VR_TRAIN",
+      "region": "US",
+      "segment": ["B2B", "B2G"],
+      "focus": ["MULTI", "CNC", "WELDING", "AUTO"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C02", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C02", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "funding": "$40M Series C (2023)",
+        "simulations": "300+",
+        "locations": "1000+"
+      }
+    },
+    {
+      "id": "CASE_003",
+      "canonical_name": "Interplay Learning",
+      "type": "HYBRID",
+      "region": "US",
+      "segment": ["B2C", "B2B"],
+      "focus": ["HVAC", "ELEC", "PLUMB"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C03", "confidence": "HIGH"},
+        {"agent": "OpenAI", "case_id": "C01", "confidence": "HIGH"},
+        {"agent": "Gemini", "case_id": "C02", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C03", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "funding": "Goldman Sachs Alternatives",
+        "users": "590,000+",
+        "time_reduction": "40%",
+        "pricing": "$30-50/month"
+      },
+      "notes": "KEY BENCHMARK - browser-first model, B2C focus"
+    },
+    {
+      "id": "CASE_004",
+      "canonical_name": "SIKE (Корпоративные системы+)",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2B", "B2G"],
+      "focus": ["MULTI", "ENERGY", "INDUSTRY"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C04", "confidence": "HIGH"},
+        {"agent": "Gemini", "case_id": "C03", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C04", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "clients": "650+",
+        "clients_list": ["Газпром", "Роснефть", "РЖД"]
+      }
+    },
+    {
+      "id": "CASE_005",
+      "canonical_name": "Varwin",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2B", "B2G"],
+      "focus": ["MULTI"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C05", "confidence": "HIGH"},
+        {"agent": "OpenAI", "case_id": "C02", "confidence": "MEDIUM"},
+        {"agent": "Gemini", "case_id": "C05", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C06", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "organizations": "1000+ образовательных",
+        "status": "Резидент Сколково",
+        "partners": ["МТС"]
+      }
+    },
+    {
+      "id": "CASE_006",
+      "canonical_name": "Modum Lab",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2B"],
+      "focus": ["RETAIL", "INDUSTRY"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C06", "confidence": "HIGH"},
+        {"agent": "OpenAI", "case_id": "C02", "confidence": "MEDIUM"},
+        {"agent": "Perplexity", "case_id": "C05", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "stores_vr": "1000 магазинов",
+        "users": "сотни тысяч",
+        "clients": ["X5", "Газпром Нефть"]
+      }
+    },
+    {
+      "id": "CASE_007",
+      "canonical_name": "КРОК VR",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2B"],
+      "focus": ["ENERGY", "NPP"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C07", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C07", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "error_reduction": "15-30%",
+        "deployments": "АЭС"
+      }
+    },
+    {
+      "id": "CASE_008",
+      "canonical_name": "PromVR",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2B"],
+      "focus": ["ELEC", "UAV"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C08", "confidence": "HIGH"},
+        {"agent": "Gemini", "case_id": "C04", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "products": ["тренажёр электрика 6кВ", "тренажёр оператора БПЛА"]
+      }
+    },
+    {
+      "id": "CASE_009",
+      "canonical_name": "Universal Robots Academy",
+      "type": "ONLINE",
+      "region": "GLOBAL",
+      "segment": ["B2C", "B2B"],
+      "focus": ["ROBOT"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C09", "confidence": "HIGH"},
+        {"agent": "Gemini", "case_id": "C06", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C10", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "pricing": "FREE",
+        "model": "обучение → продажа роботов"
+      }
+    },
+    {
+      "id": "CASE_010",
+      "canonical_name": "FANUC Training",
+      "type": "HYBRID",
+      "region": "GLOBAL",
+      "segment": ["B2B"],
+      "focus": ["ROBOT", "CNC"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C10", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "network": "глобальная сеть учебных центров",
+        "certification": "операторы"
+      }
+    },
+    {
+      "id": "CASE_011",
+      "canonical_name": "KUKA College",
+      "type": "HYBRID",
+      "region": "EU",
+      "segment": ["B2B"],
+      "focus": ["ROBOT"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C11", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C11", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "network": "глобальная сеть учебных центров"
+      }
+    },
+    {
+      "id": "CASE_012",
+      "canonical_name": "The Construct",
+      "type": "SIM_SOFT",
+      "region": "EU",
+      "segment": ["B2C", "B2B"],
+      "focus": ["ROBOT", "ROS"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C12", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C08", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "focus": "ROS/Gazebo обучение",
+        "type": "браузерные симуляторы"
+      }
+    },
+    {
+      "id": "CASE_013",
+      "canonical_name": "EON Reality",
+      "type": "VR_TRAIN",
+      "region": "US",
+      "segment": ["B2B", "B2G"],
+      "focus": ["MULTI"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C13", "confidence": "HIGH"},
+        {"agent": "Gemini", "case_id": "C07", "confidence": "HIGH"},
+        {"agent": "Perplexity", "case_id": "C09", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "grant": "$12M Spatial AI Skills"
+      }
+    },
+    {
+      "id": "CASE_014",
+      "canonical_name": "ПрофПассVR",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2G"],
+      "focus": ["MULTI", "CAREER"],
+      "mentions": [
+        {"agent": "Claude", "case_id": "C14", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "focus": "профориентация школьников"
+      }
+    },
+    {
+      "id": "CASE_015",
+      "canonical_name": "Профессионалитет (ФП)",
+      "type": "GOV_PROGRAM",
+      "region": "RU",
+      "segment": ["B2G"],
+      "focus": ["MULTI"],
+      "mentions": [
+        {"agent": "OpenAI", "case_id": "C03", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "colleges": "1000+",
+        "grant_per_college": "100 млн руб.",
+        "target_employment": "85%"
+      }
+    },
+    {
+      "id": "CASE_016",
+      "canonical_name": "Яндекс Роверы",
+      "type": "PHYSICAL_AI",
+      "region": "RU",
+      "segment": ["B2B"],
+      "focus": ["AUTO", "DELIVERY"],
+      "mentions": [
+        {"agent": "Perplexity", "case_id": "C12", "confidence": "HIGH"}
+      ],
+      "key_metrics": {
+        "rovers_2024": 260,
+        "rovers_2027_target": 20000,
+        "orders_by_robot": "каждый 10-й"
+      },
+      "notes": "Physical AI driver - creates demand for robot technicians"
+    },
+    {
+      "id": "CASE_017",
+      "canonical_name": "Яндекс ЦОД",
+      "type": "INFRASTRUCTURE",
+      "region": "RU",
+      "segment": ["B2B"],
+      "focus": ["DC"],
+      "mentions": [
+        {"agent": "Claude", "case_id": null, "confidence": "MEDIUM"},
+        {"agent": "Perplexity", "case_id": null, "confidence": "MEDIUM"}
+      ],
+      "key_metrics": {
+        "kaluga_dc": "63 МВт",
+        "vladimir_dc_target": "2027"
+      },
+      "notes": "Key driver for DC technician demand"
+    },
+    {
+      "id": "CASE_018",
+      "canonical_name": "VR Lab Pro / DigitalOxy",
+      "type": "VR_TRAIN",
+      "region": "RU",
+      "segment": ["B2B"],
+      "focus": ["MULTI"],
+      "mentions": [
+        {"agent": "Gemini", "case_id": null, "confidence": "LOW"},
+        {"agent": "Perplexity", "case_id": null, "confidence": "LOW"}
+      ],
+      "key_metrics": {
+        "pricing": "500K-3M руб. за симуляцию"
+      },
+      "notes": "Pricing reference for Russian VR market"
+    }
+  ],
+  "summary": {
+    "by_region": {
+      "US": 4,
+      "RU": 9,
+      "EU": 2,
+      "GLOBAL": 3
+    },
+    "by_segment": {
+      "B2B": 15,
+      "B2C": 5,
+      "B2G": 7
+    },
+    "by_type": {
+      "VR_TRAIN": 11,
+      "HYBRID": 3,
+      "ONLINE": 1,
+      "SIM_SOFT": 1,
+      "GOV_PROGRAM": 1,
+      "PHYSICAL_AI": 1
+    },
+    "consensus_cases": [
+      "Interplay Learning (4/4 agents)",
+      "SIKE (3/4 agents)",
+      "Varwin (4/4 agents)",
+      "Universal Robots Academy (3/4 agents)",
+      "EON Reality (3/4 agents)",
+      "Strivr (3/4 agents)"
+    ],
+    "unique_cases": [
+      "Профессионалитет (OpenAI only)",
+      "Яндекс Роверы (Perplexity only)",
+      "ПрофПассVR (Claude only)",
+      "FANUC Training (Claude only)"
+    ]
+  }
+}

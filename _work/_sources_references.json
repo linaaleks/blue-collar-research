@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "created": "2026-03-02",
+    "total_sources_raw": 567,
+    "total_unique_sources": 285,
+    "duplicates_removed": 282,
+    "agents": {
+      "Claude": 134,
+      "OpenAI": 10,
+      "Gemini": 219,
+      "Perplexity": 204
+    }
+  },
+  "source_categories": {
+    "P1_PRIMARY": {
+      "description": "Официальные сайты, первичные данные",
+      "count": 95,
+      "examples": [
+        "hh.ru/vacancies/*",
+        "interplaylearning.com",
+        "strivr.com",
+        "varwin.com",
+        "sike.ru",
+        "modumlab.com"
+      ]
+    },
+    "P2_SECONDARY": {
+      "description": "СМИ, аналитика, отраслевые отчёты",
+      "count": 145,
+      "examples": [
+        "kommersant.ru",
+        "cnews.ru",
+        "rg.ru",
+        "tass.ru",
+        "mordorintelligence.com",
+        "grandviewresearch.com"
+      ]
+    },
+    "P3_TERTIARY": {
+      "description": "Блоги, соцсети, форумы",
+      "count": 45,
+      "examples": [
+        "linkedin.com/posts/*",
+        "youtube.com/*",
+        "habr.com/*",
+        "vc.ru/*"
+      ]
+    }
+  },
+  "key_sources_by_topic": {
+    "labor_market_russia": [
+      {
+        "url": "https://hh.ru/article/rynok-truda-v-2025-godu-pochemu-stalo-trudnee-iskat-rabotu",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "Рынок труда 2025, конкуренция IT vs рабочие"
+      },
+      {
+        "url": "https://ancor.ru/press/insights/voznagrazhdenie-sinikh-vorotnichkov-v-rossii-v-2025-godu-tendentsii-i-analiz/",
+        "priority": "P1",
+        "agents": ["Claude", "Gemini", "Perplexity"],
+        "topic": "Зарплаты синих воротничков 2025"
+      },
+      {
+        "url": "https://rg.ru/2026/01/12/issledovanie-kazhdaia-chetvertaia-vakansiia-v-rossii-dlia-rabochih-specialnostej.html",
+        "priority": "P2",
+        "agents": ["Claude", "Gemini", "Perplexity"],
+        "topic": "25% вакансий — рабочие специальности"
+      },
+      {
+        "url": "https://rg.ru/2025/01/24/mintrud-prognoziruet-deficit-kadrov-na-urovne-31-mln-k-2030-godu.html",
+        "priority": "P2",
+        "agents": ["Gemini"],
+        "topic": "Прогноз дефицита 3.1 млн к 2030"
+      }
+    ],
+    "data_center_market": [
+      {
+        "url": "https://www.mordorintelligence.com/industry-reports/russia-data-center-market",
+        "priority": "P1",
+        "agents": ["OpenAI"],
+        "topic": "Рынок ЦОД в России, дефицит 30%"
+      },
+      {
+        "url": "https://ixcellerate.ru/news/rynok-tsod-v-rossii-otlozhennyj-spros-i-novye-vyzovy-tsifrovoj-transformatsii/",
+        "priority": "P2",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "Рынок ЦОД, отложенный спрос"
+      },
+      {
+        "url": "https://ipg-estate.ru/blog/tsod-rossiiskii-rynok-data-tsentrov-v-2025-godu",
+        "priority": "P2",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "Рынок ЦОД 2025"
+      }
+    ],
+    "vr_training_international": [
+      {
+        "url": "https://www.interplaylearning.com/",
+        "priority": "P1",
+        "agents": ["Claude", "OpenAI", "Gemini", "Perplexity"],
+        "topic": "Interplay Learning — ключевой бенчмарк"
+      },
+      {
+        "url": "https://transfrinc.com/resources/news/transfr-closes-40m-in-series-c-growth-funding/",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "Transfr $40M Series C"
+      },
+      {
+        "url": "https://www.strivr.com",
+        "priority": "P1",
+        "agents": ["Claude", "Gemini", "Perplexity"],
+        "topic": "Strivr — корпоративный VR"
+      },
+      {
+        "url": "https://am.gs.com/en-be/advisors/news/press-release/2024/goldman-sachs-alternatives-investment-interplay-learning",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "Goldman Sachs инвестиции в Interplay"
+      }
+    ],
+    "vr_training_russia": [
+      {
+        "url": "https://sike.ru",
+        "priority": "P1",
+        "agents": ["Claude", "Gemini", "Perplexity"],
+        "topic": "SIKE — российский VR для промышленности"
+      },
+      {
+        "url": "https://varwin.com/ru/",
+        "priority": "P1",
+        "agents": ["Claude", "OpenAI", "Gemini", "Perplexity"],
+        "topic": "Varwin — no-code VR платформа"
+      },
+      {
+        "url": "https://modumlab.com",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "Modum Lab — VR для корпораций"
+      }
+    ],
+    "robotics_training": [
+      {
+        "url": "https://www.universal-robots.com/learn-and-connect/academy/",
+        "priority": "P1",
+        "agents": ["Claude", "Gemini", "Perplexity"],
+        "topic": "Universal Robots Academy — бесплатное обучение"
+      },
+      {
+        "url": "https://www.theconstruct.ai",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "The Construct — ROS обучение"
+      },
+      {
+        "url": "https://www.fanucamerica.com/training",
+        "priority": "P1",
+        "agents": ["Claude"],
+        "topic": "FANUC Training"
+      }
+    ],
+    "physical_ai_russia": [
+      {
+        "url": "https://rb.ru/news/v-2024-godu-260-roverov-v-2027-m-20-000-cherez-dva-goda-kazhdyj-10-j-zakaz-yandeksa-budet-dostavlyat-robot/",
+        "priority": "P2",
+        "agents": ["Perplexity"],
+        "topic": "Яндекс роверы: 260 → 20000"
+      },
+      {
+        "url": "https://www.comnews.ru/content/241952/2025-10-24/2025-w43/1008/cherez-poltora-goda-kazhdyy-desyatyy-kurer-rossii-budet-robotom",
+        "priority": "P2",
+        "agents": ["Claude", "Gemini", "Perplexity"],
+        "topic": "Каждый 10-й курьер — робот"
+      },
+      {
+        "url": "https://www.comnews.ru/content/238302/2025-03-18/2025-w12/1008/rossiyskim-trassam-2025-g-proedut-100-bespilotnykh-gruzovikov",
+        "priority": "P2",
+        "agents": ["Gemini"],
+        "topic": "100 беспилотных грузовиков 2025"
+      }
+    ],
+    "salary_data": [
+      {
+        "url": "https://finder.work/salaries/inzhener_tsod/moskva",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "ЗП техников ЦОД"
+      },
+      {
+        "url": "https://hh.ru/vacancies/inzhener-tsod",
+        "priority": "P1",
+        "agents": ["Claude", "Gemini"],
+        "topic": "Вакансии инженеров ЦОД"
+      },
+      {
+        "url": "https://dreamjob.ru/salary/operator-chpu",
+        "priority": "P1",
+        "agents": ["Claude", "Perplexity"],
+        "topic": "ЗП операторов ЧПУ"
+      }
+    ],
+    "market_research": [
+      {
+        "url": "https://www.mordorintelligence.com/industry-reports/vocational-training-market",
+        "priority": "P1",
+        "agents": ["Claude"],
+        "topic": "Глобальный рынок профобучения"
+      },
+      {
+        "url": "https://www.grandviewresearch.com/industry-analysis/immersive-training-market-report",
+        "priority": "P1",
+        "agents": ["Perplexity"],
+        "topic": "Рынок иммерсивного обучения $16.4B"
+      },
+      {
+        "url": "https://www.futuredatastats.com/virtual-reality-training-market",
+        "priority": "P1",
+        "agents": ["Claude", "Gemini"],
+        "topic": "VR Training Market"
+      }
+    ]
+  },
+  "cross_validation": {
+    "confirmed_by_3_plus_agents": [
+      "Дефицит синих воротничков 800K-2.2M",
+      "Индекс HH.ru для рабочих <2-3 резюме/вакансию",
+      "IT конкуренция 16-21 резюме/вакансию",
+      "Interplay Learning 590K+ пользователей",
+      "Transfr $40M Series C",
+      "SIKE 650+ клиентов",
+      "Varwin 1000+ образовательных организаций",
+      "Рост рынка ЦОД 15-21% в год",
+      "Ниша B2C для синих воротничков в РФ свободна"
+    ],
+    "single_agent_claims": [
+      "Дефицит 3.1 млн к 2030 (Gemini)",
+      "Яндекс роверы 260 → 20000 (Perplexity)",
+      "Профессионалитет 1000+ колледжей (OpenAI)"
+    ]
+  }
+}
