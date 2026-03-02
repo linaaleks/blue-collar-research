@@ -3,526 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рынок высококвалифицированных синих воротничков в РФ</title>
+    <title>Рынок синих воротничков в РФ — Исследование для стейкхолдеров</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --success: #059669;
+            --warning: #d97706;
             --gray-50: #f9fafb;
             --gray-100: #f3f4f6;
             --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
             --gray-600: #4b5563;
-            --gray-700: #374151;
             --gray-800: #1f2937;
             --gray-900: #111827;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray-50); color: var(--gray-800); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: var(--gray-50);
-            color: var(--gray-800);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             color: white;
-            padding: 40px 0;
-            margin-bottom: 40px;
+            padding: 48px 0 40px;
+            margin-bottom: 32px;
         }
+        header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; }
+        header .subtitle { opacity: 0.92; font-size: 1.05rem; margin-bottom: 20px; }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.875rem; opacity: 0.9; }
+        .meta span { background: rgba(255,255,255,0.18); padding: 6px 12px; border-radius: 20px; }
 
-        header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-
-        .meta-info {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .meta-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Navigation */
         nav {
             background: white;
             border-bottom: 1px solid var(--gray-200);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.06);
         }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            overflow-x: auto;
-            padding: 0 20px;
-        }
-
+        nav .container { display: flex; flex-wrap: wrap; gap: 4px; padding-top: 0; padding-bottom: 0; }
         nav a {
             display: block;
-            padding: 16px 20px;
+            padding: 14px 18px;
             color: var(--gray-600);
             text-decoration: none;
             font-weight: 500;
-            white-space: nowrap;
+            font-size: 0.95rem;
             border-bottom: 3px solid transparent;
             transition: all 0.2s;
         }
+        nav a:hover, nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
 
-        nav a:hover, nav a.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-
-        /* Sections */
         section {
             background: white;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
-
         section h2 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: var(--gray-900);
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--gray-100);
         }
+        section .section-desc { color: var(--gray-600); font-size: 0.95rem; margin-bottom: 24px; }
+        section h3 { font-size: 1.15rem; color: var(--gray-800); margin: 28px 0 14px; }
+        section h4 { font-size: 1rem; color: var(--gray-800); margin: 20px 0 10px; }
+        section p { margin-bottom: 12px; font-size: 0.95rem; }
 
-        section h3 {
-            font-size: 1.2rem;
-            color: var(--gray-800);
-            margin: 25px 0 15px;
-        }
-
-        /* Key Insight Box */
-        .insight-box {
+        .insight {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-left: 4px solid var(--warning);
-            padding: 20px;
+            padding: 18px 20px;
             border-radius: 0 8px 8px 0;
-            margin-bottom: 30px;
+            margin: 20px 0;
         }
+        .insight h3 { margin: 0 0 8px; color: #92400e; font-size: 1.05rem; }
+        .insight p { margin: 0; color: #78350f; font-size: 0.95rem; }
 
-        .insight-box h3 {
-            color: #92400e;
-            margin: 0 0 10px;
-            font-size: 1.1rem;
-        }
-
-        .insight-box p {
-            color: #78350f;
-            font-size: 1rem;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 20px 0; }
+        .stat {
             background: var(--gray-50);
-            padding: 20px;
+            padding: 18px;
             border-radius: 10px;
             text-align: center;
             border: 1px solid var(--gray-200);
         }
+        .stat .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: block; }
+        .stat .label { color: var(--gray-600); font-size: 0.85rem; margin-top: 4px; }
+        .stat.highlight { background: #eff6ff; border-color: var(--primary-light); }
 
-        .stat-card .value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-        }
+        .table-wrap { overflow-x: auto; margin: 16px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--gray-200); }
+        th { background: var(--gray-50); font-weight: 600; color: var(--gray-700); }
+        tr:hover { background: var(--gray-50); }
 
-        .stat-card .label {
-            color: var(--gray-600);
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
+        .block-number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--primary); color: white; border-radius: 8px; font-weight: 700; font-size: 0.9rem; margin-right: 10px; }
+        .two-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card { background: var(--gray-50); padding: 20px; border-radius: 10px; border: 1px solid var(--gray-200); }
+        .card h4 { margin-top: 0; }
 
-        .stat-card.highlight {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            border-color: var(--primary);
-        }
+        .rec-list { list-style: none; }
+        .rec-list li { padding: 8px 0; padding-left: 24px; position: relative; }
+        .rec-list li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: bold; }
 
-        /* Tables */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
+        footer { text-align: center; padding: 32px 20px; color: var(--gray-600); font-size: 0.875rem; }
+        footer a { color: var(--primary); text-decoration: none; }
+        .sources-note { font-size: 0.8rem; color: var(--gray-600); margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200); }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        th {
-            background: var(--gray-50);
-            font-weight: 600;
-            color: var(--gray-700);
-        }
-
-        tr:hover {
-            background: var(--gray-50);
-        }
-
-        /* Consensus Badge */
-        .consensus {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .consensus-4 { background: #d1fae5; color: #065f46; }
-        .consensus-3 { background: #dbeafe; color: #1e40af; }
-        .consensus-2 { background: #fef3c7; color: #92400e; }
-        .consensus-1 { background: #fee2e2; color: #991b1b; }
-
-        /* Case Cards */
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
-
-        .case-card {
-            background: white;
-            border: 1px solid var(--gray-200);
-            border-radius: 10px;
-            padding: 20px;
-            transition: all 0.2s;
-        }
-
-        .case-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
-        .case-card.benchmark {
-            border-color: var(--warning);
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-        }
-
-        .case-card h4 {
-            font-size: 1.1rem;
-            color: var(--gray-900);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .case-card .tag {
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 10px;
-            background: var(--gray-100);
-            color: var(--gray-600);
-        }
-
-        .case-card .tag.us { background: #dbeafe; color: #1e40af; }
-        .case-card .tag.ru { background: #fee2e2; color: #991b1b; }
-        .case-card .tag.eu { background: #d1fae5; color: #065f46; }
-
-        .case-card .metrics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .case-card .metric {
-            background: var(--gray-50);
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-        }
-
-        .case-card .metric strong {
-            color: var(--primary);
-        }
-
-        /* Recommendation Cards */
-        .rec-card {
-            background: white;
-            border: 2px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-        }
-
-        .rec-card.priority-1 {
-            border-color: var(--success);
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-        }
-
-        .rec-card.priority-2 {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        }
-
-        .rec-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .rec-card .star {
-            color: var(--warning);
-            font-size: 1.5rem;
-        }
-
-        .criteria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .criteria-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            background: rgba(255,255,255,0.7);
-            border-radius: 6px;
-            font-size: 0.9rem;
-        }
-
-        .criteria-item .check {
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* Patterns */
-        .pattern-list {
-            display: grid;
-            gap: 15px;
-        }
-
-        .pattern-item {
-            display: flex;
-            gap: 15px;
-            padding: 15px;
-            background: var(--gray-50);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .pattern-item .number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            min-width: 40px;
-        }
-
-        .pattern-item .content h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .pattern-item .content p {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-        }
-
-        /* Comparison Chart */
-        .comparison-bar {
-            margin: 20px 0;
-        }
-
-        .bar-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .bar-container {
-            height: 30px;
-            background: var(--gray-200);
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .bar-fill {
-            height: 100%;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: white;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: width 0.5s ease;
-        }
-
-        .bar-fill.it { background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%); }
-        .bar-fill.blue { background: linear-gradient(90deg, #10b981 0%, #059669 100%); }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--gray-200);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 25px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
-        }
-
-        .timeline-item h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item p {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .tab-btn {
-            padding: 12px 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            color: var(--gray-600);
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .tab-btn:hover {
-            color: var(--primary);
-        }
-
-        .tab-btn.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-            font-weight: 600;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--gray-600);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .case-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                padding: 12px 15px;
-                font-size: 0.9rem;
-            }
+            section { padding: 20px; }
+            nav a { padding: 12px 14px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -530,626 +123,286 @@
     <header>
         <div class="container">
             <h1>Рынок высококвалифицированных синих воротничков в РФ</h1>
-            <p>Мульти-агентный синтез исследования для запуска образовательного продукта</p>
-            <div class="meta-info">
-                <span class="meta-badge">📅 2 марта 2026</span>
-                <span class="meta-badge">🤖 4 AI-агента</span>
-                <span class="meta-badge">📚 285 источников</span>
-                <span class="meta-badge">🏢 18 кейсов</span>
+            <p class="subtitle">Исследование для оценки потенциала рынка, барьеров и финансовой модели запуска образовательного направления</p>
+            <div class="meta">
+                <span>📅 Обновлено: 2026</span>
+                <span>📊 8 отчётов (4 + 4 от коллег)</span>
+                <span>🎯 Пилот: Техник ЦОД</span>
             </div>
         </div>
     </header>
 
     <nav>
         <div class="container">
-            <ul>
-                <li><a href="#summary" class="active">Главное</a></li>
-                <li><a href="#market">Рынок труда</a></li>
-                <li><a href="#cases">Кейсы</a></li>
-                <li><a href="#professions">Профессии</a></li>
-                <li><a href="#recommendations">Рекомендации</a></li>
-                <li><a href="#forecast">Прогноз</a></li>
-            </ul>
+            <a href="#context" class="active">Контекст и цель</a>
+            <a href="#block1">Блок 1. Рынок труда</a>
+            <a href="#block2">Блок 2. Технологии</a>
+            <a href="#block3">Блок 3. Регулирование</a>
+            <a href="#block4">Блок 4. Финансовая модель</a>
+            <a href="#conclusions">Выводы</a>
         </div>
     </nav>
 
     <main class="container">
-        <!-- Summary Section -->
-        <section id="summary">
-            <h2>Ключевой вывод</h2>
-            
-            <div class="insight-box">
-                <h3>💡 Ниша B2C-обучения высококвалифицированных синих воротничков в России полностью свободна</h3>
-                <p>Все российские VR-компании (SIKE, Varwin, Modum Lab, КРОК) работают только в B2B/B2G сегменте. Аналога Interplay Learning (590K+ пользователей, подписка $30-50/мес) в РФ не существует.</p>
-            </div>
+        <!-- Контекст и цель -->
+        <section id="context">
+            <h2><span class="block-number">0</span>Контекст и цель проекта</h2>
+            <p class="section-desc">Продуктовая гипотеза и цель исследования для стейкхолдеров.</p>
 
-            <div class="stats-grid">
-                <div class="stat-card highlight">
-                    <span class="value">800K–2.2M</span>
-                    <span class="label">Дефицит кадров</span>
-                </div>
-                <div class="stat-card">
-                    <span class="value">2.1</span>
-                    <span class="label">Резюме/вакансию (рабочие)</span>
-                </div>
-                <div class="stat-card">
-                    <span class="value">16-21</span>
-                    <span class="label">Резюме/вакансию (IT)</span>
-                </div>
-                <div class="stat-card">
-                    <span class="value">+18-39%</span>
-                    <span class="label">Рост ЗП рабочих г/г</span>
-                </div>
-            </div>
+            <h3>Продуктовая гипотеза</h3>
+            <p>Рассматривается запуск нового <strong>образовательного направления</strong> для подготовки высококвалифицированных специалистов рабочих профессий («синие воротнички»).</p>
 
-            <h3>Консенсус агентов</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Факт</th>
-                            <th>Консенсус</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Дефицит синих воротничков 800K–2.2M</td>
-                            <td><span class="consensus consensus-4">4/4 агентов</span></td>
-                        </tr>
-                        <tr>
-                            <td>Ниша B2C для синих воротничков в РФ свободна</td>
-                            <td><span class="consensus consensus-4">4/4 агентов</span></td>
-                        </tr>
-                        <tr>
-                            <td>Гибридный формат обучения обязателен</td>
-                            <td><span class="consensus consensus-4">4/4 агентов</span></td>
-                        </tr>
-                        <tr>
-                            <td>Техник ЦОД — оптимальная профессия для старта</td>
-                            <td><span class="consensus consensus-4">4/4 агентов</span></td>
-                        </tr>
-                        <tr>
-                            <td>Рост рынка ЦОД 15-21% в год</td>
-                            <td><span class="consensus consensus-4">4/4 агентов</span></td>
-                        </tr>
-                        <tr>
-                            <td>Interplay Learning — ключевой бенчмарк</td>
-                            <td><span class="consensus consensus-4">4/4 агентов</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h3>Цель исследования</h3>
+            <p>Собрать исчерпывающие количественные и качественные данные для:</p>
+            <ul class="rec-list">
+                <li>оценки потенциала рынка;</li>
+                <li>выявления ключевых барьеров;</li>
+                <li>построения реалистичной финансовой модели проекта.</li>
+            </ul>
+            <p>Результаты лягут в основу решения о <strong>запуске пилота</strong> и определении его параметров.</p>
         </section>
 
-        <!-- Market Section -->
-        <section id="market">
-            <h2>Рынок труда: IT vs Синие воротнички</h2>
+        <!-- Блок 1. Рынок труда -->
+        <section id="block1">
+            <h2><span class="block-number">1</span>Анализ рынка труда (спрос и предложение)</h2>
+            <p class="section-desc">Спрос по профессиям, вакансии, соискатели, образовательный ландшафт.</p>
 
-            <h3>Конкуренция за вакансии</h3>
-            <div class="comparison-bar">
-                <div class="bar-label">
-                    <span>IT-специалисты</span>
-                    <span>16-21 резюме/вакансию</span>
-                </div>
-                <div class="bar-container">
-                    <div class="bar-fill it" style="width: 85%;">Перенасыщение</div>
-                </div>
-            </div>
-            <div class="comparison-bar">
-                <div class="bar-label">
-                    <span>Синие воротнички</span>
-                    <span>2.1 резюме/вакансию</span>
-                </div>
-                <div class="bar-container">
-                    <div class="bar-fill blue" style="width: 15%;">Дефицит</div>
-                </div>
+            <h3>Анализ спроса</h3>
+            <p><strong>Приоритетные профессии:</strong> Техник ЦОД (PROF_DC), ОВиК/HVAC (PROF_HVAC), BIM-моделлер (PROF_BIM), монтажник вентиляции (PROF_MV), промышленный электрик.</p>
+
+            <div class="stats">
+                <div class="stat highlight"><span class="value">800K–2,2M</span><span class="label">Дефицит кадров</span></div>
+                <div class="stat"><span class="value">86%</span><span class="label">Работодателей заявляют нехватку</span></div>
+                <div class="stat"><span class="value">2,1</span><span class="label">Резюме на вакансию (рабочие)</span></div>
+                <div class="stat"><span class="value">25%</span><span class="label">Доля рабочих вакансий в РФ</span></div>
             </div>
 
-            <h3>Зарплаты по профессиям (Москва)</h3>
-            <div class="table-wrapper">
+            <div class="table-wrap">
                 <table>
                     <thead>
                         <tr>
                             <th>Профессия</th>
-                            <th>Диапазон ЗП</th>
-                            <th>Консенсус</th>
-                            <th>Особенности</th>
+                            <th>Вакансии</th>
+                            <th>Зарплаты (Москва)</th>
+                            <th>Ключевые требования</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Техник ЦОД</strong></td>
-                            <td>85K – 300K ₽</td>
-                            <td><span class="consensus consensus-4">4/4</span></td>
-                            <td>Высокий потолок, дефицит 30%</td>
+                            <td>450–600/мес; 76% рынка в Москве</td>
+                            <td>85 000 – 300 000 ₽</td>
+                            <td>III–IV группа электробезопасности, СКС, ИБП</td>
                         </tr>
                         <tr>
                             <td><strong>ОВИК (HVAC)</strong></td>
-                            <td>90K – 300K ₽</td>
-                            <td><span class="consensus consensus-3">3/4</span></td>
-                            <td>Бригадиры до 300K</td>
+                            <td>>12 000 по РФ</td>
+                            <td>90 000 – 300 000 ₽</td>
+                            <td>Диплом СПО, работа на высоте, пайка, автоматика</td>
                         </tr>
                         <tr>
                             <td><strong>BIM-моделлер</strong></td>
-                            <td>100K – 180K ₽</td>
-                            <td><span class="consensus consensus-3">3/4</span></td>
-                            <td>Госзаказ драйвер</td>
+                            <td>Высокий спрос (госсектор)</td>
+                            <td>100 000 – 180 000 ₽</td>
+                            <td>Renga, NanoCAD, интероперабельность</td>
                         </tr>
                         <tr>
-                            <td><strong>Электрик</strong></td>
-                            <td>60K – 140K ₽</td>
-                            <td><span class="consensus consensus-3">3/4</span></td>
-                            <td>Массовый дефицит +46%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Сварщик</strong></td>
-                            <td>медиана 162K ₽</td>
-                            <td><span class="consensus consensus-2">2/4</span></td>
-                            <td>Обгоняет офисных работников</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Оператор ЧПУ</strong></td>
-                            <td>80K – 150K ₽</td>
-                            <td><span class="consensus consensus-2">2/4</span></td>
-                            <td>Стабильный спрос</td>
+                            <td><strong>Монтажник вентиляции</strong></td>
+                            <td>Массовый рынок</td>
+                            <td>81 000 – 140 000 ₽</td>
+                            <td>Чертежи, монтаж, опрессовка</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3>Рынок ЦОД в России</h3>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="value">130.9 млрд ₽</span>
-                    <span class="label">Объём рынка 2024</span>
-                </div>
-                <div class="stat-card highlight">
-                    <span class="value">+15-21%</span>
-                    <span class="label">Рост в год</span>
-                </div>
-                <div class="stat-card">
-                    <span class="value">194</span>
-                    <span class="label">Действующих ЦОД</span>
-                </div>
-                <div class="stat-card">
-                    <span class="value">30%</span>
-                    <span class="label">Дефицит кадров</span>
-                </div>
+            <h3>Драйверы спроса (3–5 лет)</h3>
+            <ul class="rec-list">
+                <li><strong>ЦОД:</strong> рост мощностей +33% к 2025; стойко-места 48,5 тыс. → 82,4 тыс.; новые площадки (Яндекс Калуга 63 МВт, Владимир к 2027).</li>
+                <li><strong>BIM/ТИМ:</strong> обязательное применение с 1.07.2024 для долевого строительства; целевой уровень внедрения 50% к середине 2025.</li>
+                <li><strong>Профессионалитет:</strong> 1000+ колледжей, гранты ~100 млн ₽ на колледж, цель 85% трудоустройства.</li>
+            </ul>
+
+            <h3>Анализ предложения (образование и конкуренция)</h3>
+            <p><strong>Госсектор:</strong> колледжи/вузы, «Профессионалитет» — дефицит цифровых методик и симуляторов.</p>
+            <p><strong>Частный сектор:</strong> корпоративные академии (Selectel School, CROC Brainz), частные УЦ (курсы монтажников 3 900 – 15 850 ₽; инженеры/BIM 20 000 – 50 000 ₽), технологические провайдеры (HTS, Varwin, Vizzion, SIKE, Modum Lab, КРОК VR).</p>
+            <p><strong>Рынок корпоративного обучения в РФ:</strong> <strong>91 млрд руб.</strong>; средний бюджет на обучение в крупной компании — 557 млн ₽ (2024); 52% компаний планируют увеличение бюджетов в 2025.</p>
+
+            <div class="insight">
+                <h3>Пробел на рынке</h3>
+                <p>Между дорогим кастомным VR (от 1,5 млн ₽ за симуляцию) и массовым СПО нет «каталога симуляторов» по модели Interplay Learning — ниша в РФ свободна.</p>
             </div>
         </section>
 
-        <!-- Cases Section -->
-        <section id="cases">
-            <h2>Кейсы компаний</h2>
+        <!-- Блок 2. Технологии -->
+        <section id="block2">
+            <h2><span class="block-number">2</span>Технологические решения для практической подготовки</h2>
+            <p class="section-desc">Компетенции для симуляции, карта технологий, рекомендация по MVP.</p>
 
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="international">🌍 Международные</button>
-                <button class="tab-btn" data-tab="russian">🇷🇺 Российские</button>
-                <button class="tab-btn" data-tab="robotics">🤖 Робототехника</button>
-            </div>
+            <h3>Ключевые операции для симуляции (Техник ЦОД — MVP)</h3>
+            <ol class="rec-list" style="list-style: decimal; padding-left: 24px;">
+                <li>Электробезопасность (III группа)</li>
+                <li>СКС — патчинг, коммутация</li>
+                <li>ИБП — диагностика, переключения</li>
+                <li>Охлаждение — кондиционеры, алерты</li>
+                <li>Мониторинг — пороговые значения</li>
+                <li>SOP при авариях</li>
+            </ol>
 
-            <div id="international" class="tab-content active">
-                <div class="case-grid">
-                    <div class="case-card benchmark">
-                        <h4>
-                            ⭐ Interplay Learning
-                            <span class="tag us">США</span>
-                            <span class="consensus consensus-4">4/4</span>
-                        </h4>
-                        <p>Ключевой бенчмарк — единственный пример массового B2C-продукта для обучения рабочим профессиям.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>590K+</strong> пользователей</div>
-                            <div class="metric"><strong>$30-50</strong>/мес подписка</div>
-                            <div class="metric"><strong>-40%</strong> время подготовки</div>
-                            <div class="metric"><strong>Goldman Sachs</strong> инвестор</div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            Strivr
-                            <span class="tag us">США</span>
-                            <span class="consensus consensus-3">3/4</span>
-                        </h4>
-                        <p>VR-платформа для корпоративного обучения. Ключевой клиент — Walmart.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>$51M+</strong> привлечено</div>
-                            <div class="metric"><strong>2M+</strong> VR-сессий</div>
-                            <div class="metric"><strong>1M+</strong> сотрудников Walmart</div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            Transfr
-                            <span class="tag us">США</span>
-                            <span class="consensus consensus-2">2/4</span>
-                        </h4>
-                        <p>VR для рабочих профессий: сварка, CNC, автомеханика. Фокус на колледжи.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>$40M</strong> Series C</div>
-                            <div class="metric"><strong>300+</strong> симуляций</div>
-                            <div class="metric"><strong>1000+</strong> точек</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="russian" class="tab-content">
-                <div class="case-grid">
-                    <div class="case-card">
-                        <h4>
-                            SIKE
-                            <span class="tag ru">Россия</span>
-                            <span class="consensus consensus-3">3/4</span>
-                        </h4>
-                        <p>VR-тренажёры для промышленности и энергетики. Клиенты: Газпром, Роснефть, РЖД.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>650+</strong> клиентов</div>
-                            <div class="metric"><strong>B2B/B2G</strong> только</div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            Varwin
-                            <span class="tag ru">Россия</span>
-                            <span class="consensus consensus-4">4/4</span>
-                        </h4>
-                        <p>No-code VR платформа. Резидент Сколково. Партнёрство с МТС.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>1000+</strong> орг.</div>
-                            <div class="metric"><strong>Сколково</strong></div>
-                            <div class="metric"><strong>МТС</strong> партнёр</div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            Modum Lab
-                            <span class="tag ru">Россия</span>
-                            <span class="consensus consensus-3">3/4</span>
-                        </h4>
-                        <p>VR для ритейла и промышленности. Клиенты: X5, Газпром Нефть.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>1000</strong> магазинов</div>
-                            <div class="metric"><strong>сотни тысяч</strong> обучающихся</div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            КРОК VR
-                            <span class="tag ru">Россия</span>
-                            <span class="consensus consensus-2">2/4</span>
-                        </h4>
-                        <p>VR для энергетики и АЭС. Снижение ошибок 15-30%.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>АЭС</strong> внедрения</div>
-                            <div class="metric"><strong>-15-30%</strong> ошибок</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="insight-box" style="margin-top: 20px;">
-                    <h3>💰 Стоимость VR-разработки в РФ</h3>
-                    <p>От 500K до 3M рублей за одну симуляцию. Все компании работают по проектной модели (B2B), массовый продукт отсутствует.</p>
-                </div>
-            </div>
-
-            <div id="robotics" class="tab-content">
-                <div class="case-grid">
-                    <div class="case-card">
-                        <h4>
-                            Universal Robots Academy
-                            <span class="tag">Глобальный</span>
-                            <span class="consensus consensus-3">3/4</span>
-                        </h4>
-                        <p>Бесплатная онлайн-академия по программированию коботов. Модель: обучение → продажа роботов.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>FREE</strong></div>
-                            <div class="metric"><strong>Онлайн</strong></div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            The Construct
-                            <span class="tag eu">Европа</span>
-                            <span class="consensus consensus-2">2/4</span>
-                        </h4>
-                        <p>Браузерные симуляторы для ROS/Gazebo. Обучение робототехнике онлайн.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>ROS</strong></div>
-                            <div class="metric"><strong>Gazebo</strong></div>
-                            <div class="metric"><strong>Браузер</strong></div>
-                        </div>
-                    </div>
-
-                    <div class="case-card">
-                        <h4>
-                            Яндекс Роверы
-                            <span class="tag ru">Россия</span>
-                            <span class="consensus consensus-1">1/4</span>
-                        </h4>
-                        <p>Physical AI: роботы-курьеры. Создаёт новый рынок техников по обслуживанию роботов.</p>
-                        <div class="metrics">
-                            <div class="metric"><strong>260</strong> роверов (2024)</div>
-                            <div class="metric"><strong>20,000</strong> к 2027</div>
-                            <div class="metric"><strong>каждый 10-й</strong> заказ</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professions Section -->
-        <section id="professions">
-            <h2>Оценка профессий для старта</h2>
-
-            <div class="table-wrapper">
+            <h3>Карта технологий</h3>
+            <div class="table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Профессия</th>
-                            <th>Рынок</th>
-                            <th>ЗП</th>
-                            <th>Конкуренция</th>
-                            <th>Синергия Яндекс</th>
-                            <th>Симуляторы</th>
-                            <th>Оценка</th>
+                            <th>Решение</th>
+                            <th>Стоимость</th>
+                            <th>Эффективность</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #ecfdf5;">
-                            <td><strong>⭐ Техник ЦОД</strong></td>
-                            <td>✅ 450-600/мес</td>
-                            <td>✅ 85-300K</td>
-                            <td>✅ Дефицит 30%</td>
-                            <td>✅ ЦОД Калуга, Владимир</td>
-                            <td>✅ 6 модулей</td>
-                            <td><strong>⭐⭐⭐</strong></td>
-                        </tr>
-                        <tr style="background: #ecfdf5;">
-                            <td><strong>Электрик</strong></td>
-                            <td>✅ Массовый</td>
-                            <td>✅ 60-140K</td>
-                            <td>✅ +46% спрос</td>
-                            <td>🟡 Косвенная</td>
-                            <td>✅ Готовые VR</td>
-                            <td><strong>⭐⭐⭐</strong></td>
-                        </tr>
-                        <tr style="background: #eff6ff;">
-                            <td><strong>ОВИК (HVAC)</strong></td>
-                            <td>✅ 12K+ вакансий</td>
-                            <td>✅ 90-300K</td>
-                            <td>✅ Дефицит</td>
-                            <td>🟡 Косвенная</td>
-                            <td>🟡 Сложная логистика</td>
-                            <td><strong>⭐⭐</strong></td>
+                        <tr>
+                            <td>VR (high-fidelity)</td>
+                            <td>400K – 3M ₽ за симуляцию</td>
+                            <td>Снижение ошибок 15–30%</td>
                         </tr>
                         <tr>
-                            <td><strong>BIM-строитель</strong></td>
-                            <td>🟡 Госзаказ</td>
-                            <td>✅ 100-180K</td>
-                            <td>🟡 Средняя</td>
-                            <td>❌ Нет</td>
-                            <td>🟡 Софт-фокус</td>
-                            <td><strong>⭐</strong></td>
+                            <td>Браузерные 3D-симуляторы</td>
+                            <td>Ниже VR</td>
+                            <td>Масштаб (Interplay 590K+ пользователей)</td>
                         </tr>
+                        <tr>
+                            <td>Гибрид (онлайн + очный интенсив)</td>
+                            <td>Средняя</td>
+                            <td>−40% время до самостоятельной смены; 100% онлайн неэффективно для моторных навыков</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Госзакупки VR:</strong> в 2023 образовательные учреждения РФ закупили VR-оборудования на <strong>1,83 млрд руб.</strong>; 1-е пол. 2024 — ещё 374 млн ₽.</p>
+
+            <h3>Рекомендация по MVP</h3>
+            <div class="card">
+                <p><strong>Технология:</strong> Browser-first, VR-selective (80% браузер, 20% VR для опасных процедур) + обязательный очный интенсив 2–3 дня на реальном оборудовании.</p>
+                <p><strong>Пилотная профессия:</strong> Техник ЦОД (PROF_DC) — 76% рынка в Москве, рост +33%, высокая цена ошибки.</p>
+                <p><strong>Оценка:</strong> B2B 50 000 – 150 000 ₽ за сотрудника; партнёрство с лицензированным УЦ (EDU_MIX), лицензирование готового VR (например, HTS).</p>
+            </div>
+        </section>
+
+        <!-- Блок 3. Регулирование -->
+        <section id="block3">
+            <h2><span class="block-number">3</span>Нормативно-правовое регулирование</h2>
+            <p class="section-desc">Требования к квалификации, профстандарты, лицензирование.</p>
+
+            <h3>Требования к квалификации</h3>
+            <p><strong>Профстандарты:</strong> ЦОД — ГОСТ Р 58811-2020, 58812-2020, 70139-2022; ОВиК — 251н (Минтруд); BIM — 787н (в силу с 01.03.2025).</p>
+            <p><strong>Документы:</strong> диплом СПО часто обязателен (ТК РФ); реальный найм — по вендорским сертификатам и допускам («двойной ключ»). Для техников ЦОД/ОВиК — III–IV группа по электробезопасности; охрана труда и промбезопасность. VR-симуляторы не заменяют практические часы для получения допусков — только дополнение к очной практике.</p>
+
+            <h3>Лицензирование</h3>
+            <p>Для выдачи котирующегося документа нужна образовательная лицензия (Рособрнадзор). <strong>Рекомендация:</strong> партнёрство с лицензированным УЦ или вузом/колледжем (модель EDU_MIX) — работа под их лицензией на старте.</p>
+        </section>
+
+        <!-- Блок 4. Финансовая модель -->
+        <section id="block4">
+            <h2><span class="block-number">4</span>Построение финансовой модели рынка</h2>
+            <p class="section-desc">TAM/SAM/SOM, бизнес-модели, бенчмарки стоимости.</p>
+
+            <h3>Объём рынка (TAM / SAM / SOM)</h3>
+            <div class="stats">
+                <div class="stat highlight"><span class="value">91 млрд ₽</span><span class="label">TAM — корпоративное обучение в РФ</span></div>
+                <div class="stat"><span class="value">Сотни млн ₽</span><span class="label">Цель выручки к 2028 (реалистично)</span></div>
+            </div>
+            <p>SOM — реалистичная доля на 3–5 лет при захвате доли в сегменте обучения для ЦОД и BIM с учётом роста бюджетов и готовности платить за снижение рисков.</p>
+
+            <h3>Бизнес-модели</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Модель</th>
+                            <th>Целевая аудитория</th>
+                            <th>Оценка чека / цены</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>B2B</strong></td>
+                            <td>Операторы ЦОД, подрядчики ОВиК</td>
+                            <td>50 000 – 150 000 ₽ за сотрудника (основной канал пилота)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B2G</strong></td>
+                            <td>Колледжи «Профессионалитета»</td>
+                            <td>Гранты, софинансирование; библиотека симуляторов по ФГОС</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B2C</strong></td>
+                            <td>Физлица, переквалификация</td>
+                            <td>Подписка $30–50/мес (масштаб после пилота)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Бенчмарки стоимости</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Сегмент</th>
+                            <th>Стоимость (РФ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Курсы монтажников</td><td>3 900 – 15 850 ₽</td></tr>
+                        <tr><td>Курсы инженеров / BIM</td><td>20 000 – 50 000 ₽ и выше</td></tr>
+                        <tr><td>B2B за сотрудника (ЦОД)</td><td>50 000 – 150 000 ₽</td></tr>
+                        <tr><td>VR-симулятор (единица)</td><td>400 000 – 3 000 000 ₽</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Recommendations Section -->
-        <section id="recommendations">
-            <h2>Рекомендации</h2>
-
-            <div class="rec-card priority-1">
-                <h4><span class="star">⭐</span> Приоритет #1: Техник ЦОД</h4>
-                <p>Идеальный сегмент для MVP. Высокие зарплаты и критичность инфраструктуры создают готовность платить за качественное обучение.</p>
-                
-                <div class="criteria-grid">
-                    <div class="criteria-item"><span class="check">✓</span> 450-600 вакансий/мес</div>
-                    <div class="criteria-item"><span class="check">✓</span> ЗП 85-300K ₽</div>
-                    <div class="criteria-item"><span class="check">✓</span> Дефицит 30%</div>
-                    <div class="criteria-item"><span class="check">✓</span> Яндекс ЦОД Калуга 63 МВт</div>
-                    <div class="criteria-item"><span class="check">✓</span> Яндекс ЦОД Владимир к 2027</div>
-                </div>
-
-                <h4 style="margin-top: 20px;">MVP: 6 модулей</h4>
-                <div class="criteria-grid">
-                    <div class="criteria-item">1. Электробезопасность (III группа)</div>
-                    <div class="criteria-item">2. СКС (патчинг, коммутация)</div>
-                    <div class="criteria-item">3. ИБП (диагностика)</div>
-                    <div class="criteria-item">4. Охлаждение (алерты)</div>
-                    <div class="criteria-item">5. Мониторинг</div>
-                    <div class="criteria-item">6. SOP при авариях</div>
-                </div>
-                <p style="margin-top: 15px;"><strong>+ 2-3 дня очного интенсива</strong> на реальном оборудовании</p>
-            </div>
-
-            <div class="rec-card priority-2">
-                <h4>Приоритет #2: Промышленный электрик</h4>
-                <p>Массовый дефицит (21% работодателей), спрос +46% за 2 месяца. Готовые VR-тренажёры от PromVR и SIKE.</p>
-                
-                <div class="criteria-grid">
-                    <div class="criteria-item"><span class="check">✓</span> Массовый дефицит</div>
-                    <div class="criteria-item"><span class="check">✓</span> ЗП 60-140K ₽</div>
-                    <div class="criteria-item"><span class="check">✓</span> Готовые VR-тренажёры</div>
-                    <div class="criteria-item"><span class="check">✓</span> Спрос +46%</div>
-                </div>
-            </div>
-
-            <h3>Технологическая стратегия</h3>
-            <div class="insight-box">
-                <h3>Browser-first, VR-selective</h3>
-                <p><strong>80%</strong> контента — браузерные 3D-симуляции (масштабирование)<br>
-                <strong>20%</strong> — VR (опасные процедуры)<br>
-                <strong>Очный интенсив</strong> — обязателен для моторных навыков</p>
-            </div>
-
-            <h3>Go-to-Market</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>1. Beachhead: Техник ЦОД</h4>
-                    <p>MVP 6 модулей + очный интенсив. Модель Train-to-Hire (B2B). Целевые клиенты: Ростелеком, DataLine, IXcellerate.</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>2. Scale: Электрик + ОВИК</h4>
-                    <p>Расширение каталога симуляторов. B2C подписка ($30-50/мес). B2G интеграция с Профессионалитетом.</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>3. Future: Physical AI</h4>
-                    <p>Техники роботов (Яндекс роверы, беспилотники). Операторы БПЛА. Новый рынок, низкая конкуренция.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Forecast Section -->
-        <section id="forecast">
-            <h2>Прогноз на 3-5 лет</h2>
-
-            <h3>Драйверы роста</h3>
-            <div class="pattern-list">
-                <div class="pattern-item">
-                    <div class="number">1</div>
-                    <div class="content">
-                        <h4>Бум ЦОД</h4>
-                        <p>+15-21% в год. Строительство новых площадок Яндекса (Калуга 63 МВт, Владимир к 2027), Ростелеком, DataLine.</p>
-                    </div>
-                </div>
-                <div class="pattern-item">
-                    <div class="number">2</div>
-                    <div class="content">
-                        <h4>Physical AI</h4>
-                        <p>Яндекс роверы: 260 → 20,000 к 2027. Каждый 10-й курьер — робот через 1.5 года. Новый рынок техников.</p>
-                    </div>
-                </div>
-                <div class="pattern-item">
-                    <div class="number">3</div>
-                    <div class="content">
-                        <h4>Беспилотный транспорт</h4>
-                        <p>100 беспилотных грузовиков на трассах в 2025. Серийное производство к 2027.</p>
-                    </div>
-                </div>
-                <div class="pattern-item">
-                    <div class="number">4</div>
-                    <div class="content">
-                        <h4>BIM-регуляторика</h4>
-                        <p>ПП РФ №331: обязательный ТИМ (BIM) для госзаказа. Рост спроса на BIM-специалистов.</p>
-                    </div>
-                </div>
-                <div class="pattern-item">
-                    <div class="number">5</div>
-                    <div class="content">
-                        <h4>Роботизация</h4>
-                        <p>40 роботов на 10K работников. Планы Минпромторга по внедрению промышленных роботов.</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3>Прогноз</h3>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="value">3.1M</span>
-                    <span class="label">Дефицит к 2030</span>
-                </div>
-                <div class="stat-card highlight">
-                    <span class="value">↑</span>
-                    <span class="label">ЗП продолжат расти</span>
-                </div>
-                <div class="stat-card">
-                    <span class="value">NEW</span>
-                    <span class="label">Техники роботов, БПЛА</span>
-                </div>
-            </div>
+        <!-- Выводы -->
+        <section id="conclusions">
+            <h2>Сводные выводы для стейкхолдеров</h2>
+            <ul class="rec-list">
+                <li><strong>Рынок:</strong> дефицит 800K–2,2M человек; 86% работодателей заявляют нехватку; TAM корпоративного обучения 91 млрд ₽; бюджеты на обучение растут (557 млн ₽ в среднем на крупную компанию в 2024).</li>
+                <li><strong>Ниша:</strong> массовый продукт «каталог симуляторов» в РФ не занят; текущие VR-решения — дорогой B2B или госсектор.</li>
+                <li><strong>Пилот:</strong> Техник ЦОД (PROF_DC), гибрид (браузер + VR + 2–3 дня очной практики), B2B 50–150K ₽ за сотрудника; партнёрство с лицензированным УЦ (EDU_MIX).</li>
+                <li><strong>Риски:</strong> лицензирование (митигация — EDU_MIX); непризнание VR-часов для допусков (очная практика для ОТ/ЭБ); санкции ПО/железо (отечественное ПО); дефицит инструкторов.</li>
+            </ul>
+            <p class="sources-note">
+                <strong>Источники данных:</strong> 8 отчётов — 4 отчёта первой волны (Claude, OpenAI, Gemini, Perplexity) и 4 отчёта от коллег (аналогичные агенты, независимый запуск). Синтез и дедупликация по исследовательским блокам.
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>Исследование проведено методом мульти-агентного синтеза</p>
-        <p>Claude • OpenAI • Gemini • Perplexity</p>
-        <p style="margin-top: 10px;">
-            <a href="SYNTHESIS.md">Полный синтез</a> • 
-            <a href="SUMMARY.md">Executive Summary</a> • 
-            <a href="TASK.md">Исходное задание</a>
-        </p>
+        <p>Интерактивный отчёт по исследованию рынка высококвалифицированных синих воротничков в РФ</p>
+        <p><a href="SYNTHESIS.md">Полный синтез (SYNTHESIS.md)</a> · <a href="TASK.md">Исходное задание</a></p>
     </footer>
 
     <script>
-        // Smooth scroll for navigation
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-                
-                // Update active state
+                const target = document.getElementById(this.getAttribute('href').substring(1));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
             });
         });
-
-        // Update nav on scroll
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section');
             let current = '';
-            
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
+                if (scrollY >= section.offsetTop - 120) current = section.getAttribute('id');
             });
-            
             document.querySelectorAll('nav a').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
             });
-        });
-
-        // Tabs functionality
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const tabId = this.getAttribute('data-tab');
-                const parent = this.closest('section');
-                
-                // Update buttons
-                parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Update content
-                parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                parent.querySelector('#' + tabId).classList.add('active');
-            });
-        });
-
-        // Animate stats on scroll
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.5s ease';
-            observer.observe(card);
         });
     </script>
 </body>
